@@ -4,5 +4,5 @@ include_directories(${CMAKE_SOURCE_DIR}/3rdParty/include)
 link_directories(${CMAKE_SOURCE_DIR}/3rdParty/lib)
 
 add_executable(OpenGLEngine src/main.cpp src/glad.c)
-target_link_libraries(OpenGLEngine glfw3.a)
+target_link_libraries(OpenGLEngine glfw3.a GLEW.a GL)
 

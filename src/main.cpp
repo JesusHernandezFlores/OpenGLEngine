@@ -1,19 +1,15 @@
 #include <stdio.h>
 #include <iostream>
 
-#include <glad/glad.h>
+#include <GL/glew.h>
+//#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
+const GLint WIDTH = 800, HEIGHT = 600;
 
-void processInput(GLFWwindow *window)
-{
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
+void processInput(GLFWwindow *window);
 
 int main(int, char**){
     printf("Hello, from OpenGLEngine!\n");
@@ -30,15 +26,29 @@ int main(int, char**){
         glfwTerminate();
         return -1;
     }
+
+    int bufferWidth, bufferHeight;
+    glfwGetFramebufferSize(window, &bufferWidth, &bufferHeight);
+
     glfwMakeContextCurrent(window);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    glewExperimental = GL_TRUE;
+
+    if(glewInit() != GLEW_OK)
     {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
+        std::cout << "GLEW initialization failed" << std::endl;
+        glfwDestroyWindow(window);
+        glfwTerminate();
+        return -2;
     }
 
-    glViewport(0, 0, 800, 600);
+    // if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    // {
+    //     std::cout << "Failed to initialize GLAD" << std::endl;
+    //     return -1;
+    // }
+
+    glViewport(0, 0, bufferWidth, bufferHeight);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  
 
     while(!glfwWindowShouldClose(window))
@@ -56,4 +66,15 @@ int main(int, char**){
 
     glfwTerminate();
     return 0;
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow *window)
+{
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
 }

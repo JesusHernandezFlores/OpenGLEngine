@@ -63,7 +63,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/jesus/Dev/Other/OpenGlEngine/3rdParty/include"
+					"path" : "/home/jesus/Dev/OpenGLEngine/3rdParty/include"
 				}
 			],
 			"language" : "CXX",
@@ -83,7 +83,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/jesus/Dev/Other/OpenGlEngine/3rdParty/include"
+					"path" : "/home/jesus/Dev/OpenGLEngine/3rdParty/include"
 				}
 			],
 			"language" : "C",
@@ -108,11 +108,11 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/home/jesus/Dev/Other/OpenGlEngine/3rdParty/lib",
+				"fragment" : "-L/home/jesus/Dev/OpenGLEngine/3rdParty/lib",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/jesus/Dev/Other/OpenGlEngine/3rdParty/lib",
+				"fragment" : "-Wl,-rpath,/home/jesus/Dev/OpenGLEngine/3rdParty/lib",
 				"role" : "libraries"
 			},
 			{
@@ -125,7 +125,17 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 3,
+				"fragment" : "-lGLEW",
+				"role" : "libraries"
+			},
+			{
 				"fragment" : "-Wl,-Bdynamic",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lGL",
 				"role" : "libraries"
 			}
 		],
