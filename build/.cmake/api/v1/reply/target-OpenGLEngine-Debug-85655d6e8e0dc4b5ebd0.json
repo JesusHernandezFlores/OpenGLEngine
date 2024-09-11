@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "OpenGLEngine"
+			"path" : "Debug/OpenGLEngine.exe"
+		},
+		{
+			"path" : "Debug/OpenGLEngine.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -39,7 +42,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 7,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
@@ -56,14 +59,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/jesus/Dev/OpenGLEngine/3rdParty/include"
+					"path" : "C:/Users/jesus/Dev/OpenGLEngine/3rdParty/include"
 				}
 			],
 			"language" : "CXX",
@@ -76,14 +79,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/jesus/Dev/OpenGLEngine/3rdParty/include"
+					"path" : "C:/Users/jesus/Dev/OpenGLEngine/3rdParty/include"
 				}
 			],
 			"language" : "C",
@@ -93,56 +96,54 @@
 			]
 		}
 	],
+	"dependencies" : 
+	[
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
 	"id" : "OpenGLEngine::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "",
+				"fragment" : "/machine:X86 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/home/jesus/Dev/OpenGLEngine/3rdParty/lib",
+				"fragment" : "-LIBPATH:C:\\Users\\jesus\\Dev\\OpenGLEngine\\3rdParty\\lib",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/jesus/Dev/OpenGLEngine/3rdParty/lib",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-Wl,-Bstatic",
+				"backtrace" : 3,
+				"fragment" : "glfw3.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-lglfw3",
+				"fragment" : "glew32s.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-lGLEW",
+				"fragment" : "opengl32.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-Wl,-Bdynamic",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "-lGL",
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "OpenGLEngine",
-	"nameOnDisk" : "OpenGLEngine",
+	"nameOnDisk" : "OpenGLEngine.exe",
 	"paths" : 
 	{
 		"build" : ".",

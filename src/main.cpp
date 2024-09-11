@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <iostream>
 
+#ifdef _WIN32
+#include <Windows/GL/glew.h>
+#include <Windows/GLFW/glfw3.h>
+#endif
+
+#ifdef linux
 #include <GL/glew.h>
-//#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#endif
 
 const GLint WIDTH = 800, HEIGHT = 600;
 
